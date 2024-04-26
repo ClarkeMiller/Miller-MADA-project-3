@@ -91,7 +91,8 @@ plotRF1 <- plot(DR_AMR.rf)
 
 
 ```
-```   {r}
+
+```{r}
 #Offset region data
 
 # Create random forest for regression 
@@ -116,8 +117,6 @@ plot(AMR.rf)
 
 
 ```
-
-
 
 ## Quarto
 

@@ -1,0 +1,149 @@
+---
+title: Project Review 
+author: Ranni Tewfik
+date: 04-24-2024
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+---
+
+# Overview
+
+Title of project: "Geographic Spread of Seasonal Flu"
+
+Name of project author: Clarke Miller
+
+Name of project reviewer: Ranni Tewfik
+
+
+## Background, Context, and Motivation
+How well is the context of the project described? Is a comprehensive background given, including summary of previous/related work? Is the project well placed into the context of existing work (including proper referencing of existing work). Is it clear why the project was undertaken and what new information it hopes to provide?
+
+### Feedback and Comments
+
+The context of the project is fairly well described, and you provided a concise yet sufficient background on the topic of your project. I appreciate the inclusion of an abstract, as well as the figure of the world flu burden. You may want to consider moving it from the "Description of Data and Data Source" section to the "General Background Information" section. I've included some specific comments for each section below.
+
+*Abstract:* I know there are multiple ways to construct them, but I'm more familiar with abstracts that provide a summary of the research, including a brief description of the methods, results, and conclusions. I think it's fine to leave most of what you have there, but perhaps you could include some or all of these elements as well. The abstract reads more like an introduction paragraph, as it stands now. Also, I'm not sure if abstracts should include citations.
+
+*Introduction:* I think you're missing some information on what has been done in previous research and existing knowledge/technology, as well as how your project will be different from what has already been done. You mention that you're sure that "efforts like this already exist"; however, you don't elaborate with examples of multiple articles or institutional work. Additionally, it would be helpful to include a brief explanation of why replicating the prior efforts in small way could be beneficial outside the scope of the course. Finally, citations are needed for the facts presented in the "General Background Information" section, unless of it is from the reference indicated at the end of the section.
+
+### Summary Assessment
+* some contextualization and motivation
+
+
+## Question Description
+How well and clear are the question(s)/hypotheses the project aims to address described? Is it clear how the questions relate to the data?
+
+### Feedback and Comments
+
+I found it fairly easy to identify your research questions, as you clearly listed them in the introduction section. I like how the questions are basically their own paragraph, and it's evident that they relate to the flu data. Although not completely necessary, one suggestion is to discuss your hypotheses to the corresponding questions based on published literature and available resources.  
+
+### Summary Assessment
+* question/hypotheses fully clear
+
+
+## Data description
+How well is the data overall described? Is the source provided? Is a codebook or other meta-information available that makes it clear what the data is? 
+
+### Feedback and Comments
+
+Overall, I think you explained the data well in the "Description of Data and Data Source" and "Data Acquisition" sections. You should consider combining both sections into the "Description of Data and Data Source" section, as some of that information didn't fit well in the "Methods" section. Also, I’m not sure if I missed it somewhere, but consider adding a codebook or other meta-information to explain each variable in your data.
+
+### Summary Assessment
+* source and overall structure of data somewhat explained
+
+
+## Data Wrangling and Exploratory Analysis
+How well is the data cleaned/processed and explored? Are all steps reasonable and well explained? Are alternatives discussed and considered? Are meaningful exploratory results shown (e.g. in the supplementary materials)?
+
+### Feedback and Comments
+
+Your figures look great! They give a good visual summary of the data. However, the "processing-code-CM.qmd" file seems incomplete. I recommend adding more comments to your R scripts for thorough documentation. It looks like you switch to random forest model analysis half way through the data wrangling, and I'm not sure where you save the work you did in the first half. The "eda.qmd" file also needs some improvement, but the script is better documented. The first part of your exploratory analysis is easy to follow and understand. You have a section called "OLD STUFF' starting at line 443, which I'm sure you'll edit/remove before final submission. And it would be helpful to include brief summaries of what you did after each code chunk. You did that for the first few chunks, which I appreciated. I recommend doing a few more explorations showing different plots and more univariate and bivariate analyses presented in tables. Here is my general approach to exploratory analysis: summary table of the variables, correlation matrix and plots of the continuous/numeric variables, histograms of the continuous/numeric variables, boxplots of the categorical variables, and stratified plots to look at associations between three variables. I know you've made several changes to your project, and I'm sure your final product will be excellent.  
+
+### Summary Assessment
+* some weaknesses in wrangling and exploratory component
+
+
+## Appropriateness of Analysis
+Were the analysis methods appropriate for the data? Was the analysis done properly? Were different components of the analysis (e.g. performance measure, variable selection, data pre-processing, model evaluation) done in the best way possible and explained well?
+
+### Feedback and Comments
+
+In general, I believe your analysis methods were appropriate for the data. The tidy models workflow was easy to follow. You fitted three different linear regression models, and computed the RMSE and R-squared values for the models. I assume you will use those metrics to compare and discuss model evaluation in the results/discussion section(s) of your manuscript (which I have not read yet). I saw that you fitted some random forest models in other scripts. If you plan compare your linear models with a random forest model, I would include that coding in your "statistical-analysis.R" file. And similar to your exploratory analysis script, please remember to edit or remove the section called "OLD' starting at line 154. Additionally, I recommend doing the test/train and cross-validation analysis we learned in the course with your models, as well as a final model evaluation on your selected model using the test data. Finally, consider adding comments at the end of the "statistical-analysis.R" script regarding your conclusion/summary that briefly describes what you did and how you evaluated the three models to choose the "best" model.
+
+### Summary Assessment
+* defensible but not optimal analysis 
+
+
+## Presentation
+How well are results presented? Are tables and figures easy to read and understand? Are the main figures/tables publication level quality? 
+
+### Feedback and Comments
+
+Your figures are presented beautifully in the manuscript, and I had no trouble understanding them. In fact, I think they're the best I've seen so far! Regarding your tables, I suggest playing around with the R code to make them more "publication level quality". For example, you should change the column names in Tables 2-6 to how they should present in a manuscript (ex. "p-value" instead of "p.value"). Also, I don't usually see test statistics and standard errors presented in manuscript tables. The tables are something I struggled with a lot in my own project. For my Table 1, I used the tbl_summary() and as_gt() functions from the "gtsummary" and "gt" packages, respectively. 
+
+### Summary Assessment
+* results are presented ok, with room for improvement
+
+
+## Discussion/Conclusions
+Are the study findings properly discussed? Are strengths and limitations acknowledged? Are findings interpreted properly?
+
+### Feedback and Comments
+
+I think your discussion section in the manuscript is adequate. You presented a summary of the findings without re-stating the results provided earlier in the manuscript, and the strengths and limitations were acknowledged. Job well done!
+
+### Summary Assessment
+* strong, complete and clear discussion
+
+
+## Structure
+Is the project well structured? Are files in well labeled folders? Do files have reasonable names? Are all "junk" files not needed for analysis/reproduction removed? By just looking at files and folders, can you get an idea of how things fit together?
+
+### Feedback and Comments
+
+I think most of your project is well structured with properly labeled folders and reasonable file names, but I'm sure you realize some of Dr. Handel's template files are still in your repository. I recommend going through each folder and deleting all the "junk" files that are not needed for your project. For example, remove all files in the "processing-code" subfolder that are not the "processing-code-CM.qmd" file. And there are two random forest regression png files in the "processing-code" subfolder that need to moved/deleted. Unless you prefer having a separate README file for each folder, I suggest removing them and just using the main README file for the project. That’s what I did, as I find it easier to explain my project workflow.
+
+### Summary Assessment
+* mostly clear, but some confusing parts (e.g. useless files, things in the wrong folders)
+
+
+## Documentation 
+How well is the project documented? Are you able to understand each step of the whole analysis, each decision that was made, and each line of code? Is enough information provided as comments in code or as part of Rmd files? 
+
+### Feedback and Comments
+
+Overall, I was able to understand most steps of the whole analysis. The lines of code could be more thoroughly documented, especially in the "eda.qmd" file. For the "statistical-analysis.R" file, I recommend adding comments with a brief summary/explanation after each code chunk, similar to what you did in the first part of the "eda.qmd" file. It may not be completely necessary, but it could help those unfamiliar with the project and/or R coding better understand what specifically happened to the data after running each code chunk.
+
+### Summary Assessment
+* decently documented with some gaps
+
+
+## Reproducibility
+Are all results fully reproducible? Is documentation provided which clearly explains how to reproduce things, and does it work without the need for any manual intervention? Are you able to re-run the whole analysis without having to do manual interventions/edits?
+
+### Feedback and Comments
+
+I was able to run all codes without any errors. The tables and figures were produced without any manual intervention. Excellent work!
+
+### Summary assessment
+* fully reproducible without issues
+
+
+## Thoroughness
+How thorough was the overall study? Were alternatives (e.g. different ways of processing the data or different models) considered? Were alternatives discussed? Were the questions/hypotheses fully and thoroughly addressed?
+
+### Feedback and Comments
+
+I believe the overall study was thorough, as you provided several types of models to compare in the analysis. It seemed the research questions were always considered when performing each step of the analysis. The discussion section of the manuscript was a good summary of the whole process and a final address of the research questions to bring the project full circle.
+
+### Summary Assessment
+* strong level of thoroughness
+
+
+## Further Comments
+
+I really like your project topic, and I think you had a unique approach to the assignment rather than just addressing a simple etiologic or predictive research question. One final suggestion I can offer is to consider adding more to the supplementary material document. As it stands now, it only consists of output data from the random forest models without explanatory text. I think you should add all tables and figures you produced in the exploratory analysis that didn't make it to the manuscript. Other than that, I enjoyed learning more about the flu, and I hope to read through your final submission soon!
+
