@@ -1,3 +1,3 @@
-# analysis-code
+# Analysis-code
 
-This folder contains  an R script with a bit of a statistical analysis. This is only implemented as an R script, no Quarto version. 
+This folder contains  R script code to accomplish a more detailed data analysis.  This folder also includes a "sandbox" for exploring new code and processing avenues of approach that may not appear in the final analysis code. 
