@@ -61,6 +61,17 @@ I am certain that efforts like this already exist. The best of these is software
 
 ## Schematic of Workflow:
 
+```{r, echo=FALSE, message=FALSE}
+
+#| label: fig-schematic
+#| fig-cap: "Schematic 1: Schematic of Workflow For Data Exploration and Processing."
+#| echo: FALSE
+knitr::include_graphics(here("assets","schematic_1.png"))
+
+```
+
+***Schematic 1:*** ***Schematic of Workflow For Data Exploration and Processing.*** *The workflow associated with this project.  Raw data is explored graphically and via numerical analysis methods, initial data for analysis is selected and summarized, models are built to examine how well the data matches the proposed hypothesis, data may be redefined in an iterative process, finally a final data analysis is performed and presented.*
+
 ## Data Aquisition:
 
 Data was acquired from the World Health Organization Global Influenza Programme. The data includes the excel files containing raw data (VIW_FNT_CM.xlsx) and a file containing the legend for the data (VIW_FLU_METADATA.csv). This data set is one example of the data available for a project of this sort. This specific data set includes information on 89 different parameters associated with influenza outbreaks as reported world-wide since about 1995. The data includes time, region, type of flu, and many other variables that are important for answering the questions posed above.
@@ -184,7 +195,6 @@ knitr::kable(resulttable)
 
 ```{r, echo=FALSE, message=FALSE}
 
-
 #| label: tbl-lmtableB
 #| tbl-cap: ""
 #| echo: FALSE
@@ -274,7 +284,7 @@ It is obvious from the data that there is a time/location dependence on seasonal
 
 The machine learning model resulted in a very high Mean Squared Error (MSE) with a percentage of explained variance close to one.  This suggests that the machine learning model chosen may not be appropriate.  If the MSE is very high (13640640 and 9173785, respectively) but the percentage of variance explained (87.64% and 92.72%, respectively) is close to one, this suggests a few possible scenarios:
 
-1.  **Over-fitting:** The model may be over-fitting to the training data, capturing noise or specific patterns that do not generalize well to unseen data. This can lead to high MSE as the model's predictions are inaccurate for new data despite explaining a high percentage of variance in the training data.
+1.  **Over-fitting:** The model may be over-fitting to the training data, capturing noise or specific patterns that do not generalize well to unseen data. This can lead to high MSE as the model's predictions are inaccurate for new data despite explaining a high percentage of variance in the training data.  Since the data set is limited in size this is the most likely case.
     
 2. **Complexity Issues:** The model might be too complex relative to the amount of training data available. Random forests are powerful and can capture complex relationships, but they can also over-fit if not properly tuned or if the data size is limited.
     
@@ -282,19 +292,17 @@ The machine learning model resulted in a very high Mean Squared Error (MSE) with
 
 For each of these issues there are several possible solutions:
     
-*Overall Model Evaluation:* It is crucial to evaluate the performance of the model on separate test data set (not used during training) to assess its ability to generalize to new data accurately.  In this case, perhaps using more than a single year of data as train/test data may yield better results.  
+*Overall Model Evaluation:* It is important to evaluate the performance of the model on separate test data set (not used during training) to assess its ability to generalize to new data accurately.  In this case, perhaps using more than a single year of data as train/test data may yield better results.  
     
-*Hyperparameter Tuning:* Optimizing parameters such as tree depth, number of trees in the forest, minimum samples per leaf/node, etc., may help to find a balance between model complexity and generalization.
+*Hyperparameter Tuning:* Optimizing parameters such as tree depth, number of trees in the forest, minimum samples per leaf/node, etc., may help to find a balance between model complexity and generalization.  Since this data set is size limited, this option may not be applicable.
 
-*Feature Engineering and Selection:* Review the features used in the model and consider if feature engineering (creating new features) or feature selection techniques can improve model performance and reduce over-fitting.
+*Feature Engineering and Selection:* Review of the features used in the model and considering if feature engineering (creating new features) or feature selection techniques may improve model performance and reduce over-fitting.  Again, for this model it is unlikely that this will help due to the limited data set size.
     
-*Data Quality Check:* Verify the data quality, handle outliers appropriately, and ensure that the data set is representative of the problem domain without introducing biases or noise.  In the data that was selected for this project, there was no examination for outliers.  Again, including data from multiple years and normalizing that data to population, reported cases per population or some other metric may produce better results.
+*Data Quality Check:* It is important to verify the data quality, handle outliers appropriately, and ensure that the data set is representative of the problem domain without introducing biases or noise.  In the data that was selected for this project, there was no examination for outliers.  Again, including data from multiple years and normalizing that data to population, reported cases per population or some other metric may produce better results.
 
-By addressing these aspects and fine-tuning the model, its performance can be improved, over-fitting reduced, and its ability to make accurate predictions on new, unseen data enhanced.
+By addressing these aspects and fine-tuning the model, the model performance may be improved, over-fitting reduced, and its ability to make accurate predictions on new, unseen data enhanced.
 
-## Summary and Interpretation
-
-
+Since the machine learning model was not suited for the limited data set size and may not be suited for this type of data other methods must be used to explore the hypothesis.  The most conclusive evidence of the geographic and temporal dependence of seasonal flu epidemics comes from the graphic exploration of the data and from the simple linear regressions done in the data exploration and initial analysis steps.  These analyses do show a trend for the seasonal influenza outbreak to circulate globally in a west to east direction.  This trend is obvious from the graphic exploration alone.  The linear regression results confirm this progression with the WPR WHO region being the strongest candidate for the origin of the seasonal flu outbreaks in both the AMR and EUR WHO regions.  This analysis confirms other analyses that have been performed using more sophisticated methods and software. [***@Bedford-2015***]  
 
 ## Strengths and Limitations
 
