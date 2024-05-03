@@ -21,3 +21,4 @@ This project is divided into a folder structure. The following is a brief descri
   * `readme.md`: this file contains instructions or details about the folder it
   is located in. You are reading the project-level `README.md` file right now. There is a `readme` in almost every folder.
 
+The main folder also contains materials provided by peer reviews.  
