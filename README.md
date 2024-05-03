@@ -11,7 +11,7 @@ This project is divided into a folder structure. The following is a brief descri
 
 * All code relating to the project is in the `code` folder and subfolders. There are 3 sub-folders that do different parts of an analysis: Analyisis, Eda, and Processing. The folders contain files that do the data cleaning and analysis to illustrate the overall setup and workflow. See the readme files in those folders for details.
 
-* All data for the project is in the `data` folder and subfolders. There are 2 sub-folders that contain different versions of the project data.  Raw project data is in the "raw-data" folder.  This folder contains raw data (VIW_FNT_CM.xlsx) including the metadata/codebook (VIW_FLU_METADATA.csv). 
+* All data for the project is in the `data` folder and subfolders. There are 2 sub-folders that contain different versions of the project data.  Raw project data is in the "raw-data" folder.  This folder contains raw data (VIW_FNT_CM.xlsx) including the metadata/codebook (VIW_FLU_METADATA.csv). Processed data is in the "processed-data" folder.
 
 * The `products` folder and its subfolders contains deliverables, including the project manuscript/report, supplementary materials, slide decks, posters, Shiny web apps, etc.
 
