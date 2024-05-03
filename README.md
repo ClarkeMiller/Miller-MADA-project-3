@@ -21,4 +21,4 @@ This project is divided into a folder structure. The following is a brief descri
   * `readme.md`: this file contains instructions or details about the folder it
   is located in. You are reading the project-level `README.md` file right now. There is a `readme` in almost every folder.
 
-The main folder also contains materials provided by peer reviews.  
+The main folder also contains materials provided by peer reviews.  The files `project-review-Hu.qmd`,  `project-review-Tewfik.qmd`, and  `project-review-hirst.qmd` were contributed by reviewers These `.qmd` files produced corresponding `.HTML` files and file folders (`_file/`).
